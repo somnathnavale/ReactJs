@@ -1,3 +1,8 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -26,30 +31,77 @@ body {
   min-height: 100vh;
 }
 .header{
-  height: 10vh;
+  padding: 5px ;
   background: cornflowerblue;
   width: 100%;
   text-align: center;
 }
 .content{
   flex-grow: 1;
-  /* height: 80vh; */
+  padding-top: 10px;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  /* background: cornsilk; */
+  background: rgb(216, 214, 208);
+}
+.content ul{
+  width: 100%;
+  list-style: none;
+  padding: 0 0.25rem 0 0.25rem;
+}
+
+ul li::before{
+  content: "\200B";
+}
+
+.item{
+  display: flex;
+  background-color: rgb(194, 189, 144);
+  border-radius: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px ;
+  margin: 5px 0;
+}
+
+.item:first-child{
+  margin: 0;
+}
+
+.item input[type='checkbox']{
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  margin-right:5px;
+  cursor: pointer;
+}
+
+.item input[type='checkbox']:focus+label{
+  text-decoration: underline;
+}
+
+.item >label{
+  flex-grow: 1;
+}
+.item svg{
+  height: 30px;
+  width: 30px;
+  color: rgb(18, 0, 177);
+  cursor: pointer;
+}
+.item svg:hover{
+  color: red;
+  height:40px;
+  width: 40px;
 }
 
 .footer{
   width: 100%;
-  height: 10vh;
   text-align: center;
   background: cyan;
-  padding: 20px;
+  padding: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+

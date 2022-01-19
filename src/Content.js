@@ -1,32 +1,20 @@
-import { useState } from "react";
+import ItemList from './ItemList';
 
-const Content = () => {
-    const [name,setName]=useState("somanth");
-    const [count,setCount]=useState(1);
-
-    const handleNameChange=()=>{
-        const names=["somnath",'vishal','tejas','sahil'];
-        const idx=Math.floor(Math.random()*4);
-        setCount(count+1);
-        setName(`${names[idx]} Navale`);
-    }
-
-    const handleClick=(e)=>{
-        console.log("click me ");
-        console.log("from event param ", e.target.innerText);
-    }
-    const handleClick2=()=>{
-        console.log("click me ");
-    }
+const Content = ({items,handleCheck,handleDelete}) => {
     return (
-        <main className="content" onDoubleClick={handleClick2}>
-            <p>
-                Hello {name}!
-            </p>
-            <p style={{margin:"5px 0px"}}>Name has been updated {count} {count!=1 ? "times":"time"}</p>
-            <button onClick={handleNameChange} style={{margin:"5px"}}>Change Name</button>
-            <button onClick={(e)=>handleClick(e)}> click me</button>
-        </main>
-    )
+    <main className="content">
+    {
+        items.length>0 ?
+        (
+            <ItemList
+                items={items}
+                handleCheck={handleCheck}
+                handleDelete={handleDelete}
+            />
+        ):(
+            <p style={{marginTop:'20px'}}> List is Empty</p>
+        )}
+    </main>
+)
 }
 export default Content;
