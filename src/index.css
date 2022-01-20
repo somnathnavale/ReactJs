@@ -104,4 +104,53 @@ ul li::before{
   padding: 10px;
 }
 
-
+.addform{
+  background: rgb(221, 217, 201);
+  border-bottom: 2px solid rgb(207, 189, 189);
+  width: 100%;
+  padding: 10px ;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.addform label{
+  position: absolute;
+  left: -100%;
+}
+.addform input[type="text"]{
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+  flex-grow: 1;
+  padding: 10px;
+}
+.addform button{
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  background-color:cornflowerblue;
+  color: white;
+  width: 35px;
+  height: 35px;
+}
+.addform button:hover{
+  cursor: pointer;
+  background: rgb(87, 161, 87);
+}
+.searchform{
+  display: flex;
+  width: 100%;
+  background: rgb(221, 217, 201);
+  border-bottom: 2px solid rgb(207, 189, 189);
+}
+.searchform label{
+  position: absolute;
+  left: -100%;
+}
+.searchform input[type="text"]{
+  border-radius: 5px;
+  border: none;
+  margin: 10px;
+  flex-grow: 1;
+  padding: 10px;
+}
