@@ -3,17 +3,22 @@ import AddItem from './AddItem';
 import SearchItem from './SearchItem';
 import Content from './Content';
 import Footer from './Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+// import ColorChallenge from './ColorChallenge';
 
 function App() {
-  const [items,setItems]=useState(JSON.parse(localStorage.getItem('shoppingList')));
+  const API_URL="http://localhost:3500/items"
+
+  const [items,setItems]=useState(JSON.parse(localStorage.getItem('shoppingList')) || []);
   const [newItem,setNewItem]=useState('');
   const [search,setSearch]=useState('');
+ 
+  // const [color,setColor]=useState('');
+  // const [toggle,setToggle]=useState(true);
 
-  const setAndSaveItems=(newItems)=>{
-    setItems(newItems);
-    localStorage.setItem('shoppingList',JSON.stringify(newItems));
-  }
+  useEffect(()=>{
+    localStorage.setItem('shoppingList',JSON.stringify(items));
+  },[items]) 
   
   const addItem=(item)=>{
     const id=items.length ?items[items.length-1].id+1:1;
@@ -21,21 +26,21 @@ function App() {
       id,checked:false,item
     }
     const listItems=[...items,mynewItem];
-    setAndSaveItems(listItems);  
+    setItems(listItems);
   }
 
   const handleCheck=(id)=>{
       const listItems=items.map((item)=>{
           return (item.id!==id ? item:{...item ,checked:!item.checked}); 
       })
-      setAndSaveItems(listItems);  
+      setItems(listItems);  
   }
 
   const handleDelete=(id)=>{
       const listItems=items.filter((item)=>{
           return(item.id!==id);
       });
-      setAndSaveItems(listItems);  
+      setItems(listItems);  
   }
 
   const handleSubmit=(e)=>{
@@ -62,6 +67,13 @@ function App() {
         handleDelete={handleDelete}
         search={search}
       />
+      
+      {/* <ColorChallenge
+        color={color}
+        setColor={setColor}
+        toggle={toggle}
+        setToggle={setToggle}
+       /> */}
       <Footer year="2022" />
     </div>
   );
