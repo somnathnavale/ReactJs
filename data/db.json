@@ -1,19 +1,24 @@
 {
-    "items":[
-        {
-            "id":1,
-            "checked":false,
-            "item":"mango"
-        },
-        {
-            "id":2,
-            "checked":false,
-            "item":"orange"
-        },
-        {
-            "id":3,
-            "checked":false,
-            "item":"pineapple"
-        }
-    ]
+  "items": [
+    {
+      "id": 1,
+      "checked": false,
+      "item": "mango"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "item": "orange"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "item": "pineapple"
+    },
+    {
+      "id": 4,
+      "checked": false,
+      "item": "raspberry pie"
+    }
+  ]
 }

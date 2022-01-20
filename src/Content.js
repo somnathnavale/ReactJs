@@ -1,20 +1,22 @@
 import ItemList from './ItemList';
 
-const Content = ({items,handleCheck,handleDelete,search}) => {
+const Content = ({items,handleCheck,handleDelete,search,isLoading}) => {
     return (
-    <main className="content">
-    {
-        items.length>0 ?
-        (
-            <ItemList
-                items={items}
-                handleCheck={handleCheck}
-                handleDelete={handleDelete}
-            />
-        ):(
-            <p style={{marginTop:'20px',color:'red',fontWeight:'600'}}> {search.length>0 ? 'search item not found' :'List is Empty'}</p>
-        )}
-    </main>
+    <>
+        {
+            items.length>0 ?
+            (
+                <ItemList
+                    items={items}
+                    handleCheck={handleCheck}
+                    handleDelete={handleDelete}
+                />
+            ):(
+                <p style={{marginTop:'20px',color:'red',fontWeight:'600'}}> {isLoading ?("Loading items....") : ((search.length>0 ? 'search item not found' :'List is Empty'))}</p>
+            )
+        }
+        
+    </>
 )
 }
 export default Content;
