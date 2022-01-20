@@ -135,7 +135,8 @@ ul li::before{
   width: 35px;
   height: 35px;
 }
-.addform button:hover{
+.addform button:hover,
+.addform button:focus{
   cursor: pointer;
   background: rgb(87, 161, 87);
 }
